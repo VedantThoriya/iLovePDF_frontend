@@ -5,7 +5,6 @@ import {
   Facebook,
   Twitter,
   Linkedin,
-  ArrowRight,
   Files,
   Scissors,
 } from "lucide-react";

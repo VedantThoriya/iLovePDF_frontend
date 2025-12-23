@@ -4,7 +4,7 @@ import { api } from "@/api";
 import { useJobStore } from "@/store/useJobStore";
 
 export const ProcessingPage = () => {
-  const { reset } = useJobStore();
+  const { startJob, pollJob } = useJobStore();
   const location = useLocation();
   const navigate = useNavigate();
   const [jobStatus, setJobStatus] = useState("Initializing...");

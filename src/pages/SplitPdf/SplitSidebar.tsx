@@ -31,25 +31,6 @@ export interface SplitOptions {
   mergeOutput: boolean;
 }
 
-interface SplitSidebarProps {
-  options: SplitOptions;
-  setOptions: (options: SplitOptions) => (prop: any) => void;
-  // Note: usage setOptions(prev => ...) implies functional update support.
-  // The interface in SplitPdf.tsx was SetStateAction<SplitOptions>.
-  // I'll define it broadly or match exact needed signature.
-  // setOptions: React.Dispatch<React.SetStateAction<SplitOptions>>;
-  // But importing React types might be verbose.
-  // Let's use `(options: SplitOptions | ((prev: SplitOptions) => SplitOptions)) => void;`
-  // Actually, standard setState handling:
-}
-
-// Updating Props interface to match likely SetState usage
-// Or just keep it compatible with what was working.
-// Previously: setOptions: (options: SplitOptions) => void;
-// But I want to use functional updates in my fix.
-// I will check SplitPdf.tsx usage. Step 611 shows `const [options, setOptions] = useState...`
-// So it is React.Dispatch<React.SetStateAction<SplitOptions>>.
-
 // CSS for hiding spinners
 const spinnerStyle = `
   input[type=number]::-webkit-inner-spin-button, 
