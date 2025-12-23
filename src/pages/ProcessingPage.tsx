@@ -1,10 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { api } from "@/api";
-import { useJobStore } from "@/store/useJobStore";
 
 export const ProcessingPage = () => {
-  const { startJob, pollJob } = useJobStore();
   const location = useLocation();
   const navigate = useNavigate();
   const [jobStatus, setJobStatus] = useState("Initializing...");
