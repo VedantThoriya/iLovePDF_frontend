@@ -136,29 +136,34 @@ export const DownloadPage = () => {
       </h1>
 
       {/* ACTIONS */}
-      <div className="flex items-center gap-4 mb-12">
-        <Link
-          to={`/${tool}`}
-          replace
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-[#383E45] text-white"
-        >
-          <ArrowLeft size={18} />
-        </Link>
-
+      <div className="w-full max-w-md md:max-w-3xl mb-8 grid grid-cols-2 md:flex md:items-center md:justify-center gap-4">
+        {/* Download Button (Mobile: Top, Desktop: Middle) */}
         <button
           onClick={handleDownload}
-          className="flex items-center gap-3 bg-[#E5322D] hover:bg-[#d4201b] text-white text-xl font-bold py-6 px-12 rounded-lg shadow-md"
+          className="col-span-2 md:w-auto md:min-w-[300px] order-1 md:order-2 flex items-center justify-center gap-3 bg-[#2C7A7B] hover:bg-[#236363] text-white text-lg md:text-xl font-bold py-4 px-8 rounded-xl shadow-sm transition-all active:scale-[0.98]"
         >
-          <Download size={28} />
+          <Download size={24} />
           {text.buttonText}
         </button>
 
+        {/* Back Button (Mobile: Bottom Left, Desktop: Left) */}
+        <Link
+          to={`/${tool}`}
+          replace
+          className="justify-self-start order-2 md:order-1 w-10 h-10 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-[#383E45] text-white hover:bg-[#2c3137] transition-colors"
+          title="Back"
+        >
+          <ArrowLeft size={20} />
+        </Link>
+
+        {/* Trash Button (Mobile: Bottom Right, Desktop: Right) */}
         <button
           onClick={() => {
             reset();
             navigate(`/${tool}`, { replace: true });
           }}
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E5322D] text-white"
+          className="justify-self-end order-3 md:order-3 w-10 h-10 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-[#383E45] text-white hover:bg-[#E5322D] transition-colors"
+          title="Delete"
         >
           <Trash size={18} />
         </button>
@@ -213,44 +218,55 @@ export const DownloadPage = () => {
       )}
 
       {/* CONTINUE */}
-      <div className="w-full max-w-4xl bg-white rounded-xl shadow-sm p-8 border">
-        <h3 className="text-xl font-bold mb-6">Continue to…</h3>
+      <div className="w-full max-w-md md:max-w-4xl bg-white rounded-xl shadow-sm p-6 md:p-8 border border-gray-100">
+        <h3 className="text-lg md:text-xl font-bold mb-6 text-[#383E45]">
+          Continue to...
+        </h3>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Link
             to="/compress"
             replace
-            className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50"
+            className="flex items-center gap-4 p-3 rounded-lg border border-transparent hover:border-gray-200 hover:bg-gray-50 transition-all group"
           >
-            <div className="w-10 h-10 bg-green-50 text-green-500 flex items-center justify-center rounded-lg">
-              <Files />
+            <div className="w-10 h-10 bg-[#e7f5ea] text-[#00b96b] flex items-center justify-center rounded-lg group-hover:scale-110 transition-transform">
+              <Files size={20} />
             </div>
-            <span className="font-semibold">Compress PDF</span>
-            <ChevronRight className="ml-auto text-gray-400" />
+            <span className="font-semibold text-gray-700">Compress PDF</span>
+            <ChevronRight
+              className="ml-auto text-gray-400 group-hover:text-gray-600"
+              size={20}
+            />
           </Link>
 
           <Link
             to="/split"
             replace
-            className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50"
+            className="flex items-center gap-4 p-3 rounded-lg border border-transparent hover:border-gray-200 hover:bg-gray-50 transition-all group"
           >
-            <div className="w-10 h-10 bg-orange-50 text-orange-500 flex items-center justify-center rounded-lg">
-              <Scissors />
+            <div className="w-10 h-10 bg-[#fff0e0] text-[#ff9900] flex items-center justify-center rounded-lg group-hover:scale-110 transition-transform">
+              <Scissors size={20} />
             </div>
-            <span className="font-semibold">Split PDF</span>
-            <ChevronRight className="ml-auto text-gray-400" />
+            <span className="font-semibold text-gray-700">Split PDF</span>
+            <ChevronRight
+              className="ml-auto text-gray-400 group-hover:text-gray-600"
+              size={20}
+            />
           </Link>
 
           <Link
             to="/merge"
             replace
-            className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50"
+            className="flex items-center gap-4 p-3 rounded-lg border border-transparent hover:border-gray-200 hover:bg-gray-50 transition-all group"
           >
-            <div className="w-10 h-10 bg-red-50 text-red-500 flex items-center justify-center rounded-lg">
-              <Files />
+            <div className="w-10 h-10 bg-[#fdeeee] text-[#e5322d] flex items-center justify-center rounded-lg group-hover:scale-110 transition-transform">
+              <Files size={20} />
             </div>
-            <span className="font-semibold">Merge PDF</span>
-            <ChevronRight className="ml-auto text-gray-400" />
+            <span className="font-semibold text-gray-700">Merge PDF</span>
+            <ChevronRight
+              className="ml-auto text-gray-400 group-hover:text-gray-600"
+              size={20}
+            />
           </Link>
         </div>
       </div>

@@ -121,11 +121,11 @@ export const ProcessingPage = () => {
   }, [location.state, navigate]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#F4F5F6] font-sans pb-20">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#F4F5F6] font-sans pb-20 px-4">
       <div className="flex flex-col items-center">
         {/* Logo */}
         <Link to="/" className="mb-12">
-          <img src="/ilovepdf.svg" alt="iLovePDF" className="h-8 md:h-10" />
+          <img src="/logo.svg" alt="PaperFlow" className="h-8 md:h-10" />
         </Link>
 
         {/* Text */}
@@ -138,7 +138,7 @@ export const ProcessingPage = () => {
           {/* Background Circle */}
           <div className="absolute inset-0 border-[5px] border-gray-200 rounded-full"></div>
           {/* Spinning Segment */}
-          <div className="absolute inset-0 border-[5px] border-transparent border-t-[#E5322D] rounded-full animate-spin"></div>
+          <div className="absolute inset-0 border-[5px] border-transparent border-t-[#2C7A7B] rounded-full animate-spin"></div>
         </div>
 
         {/* Warning Text */}

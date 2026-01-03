@@ -20,7 +20,7 @@ export const Home = () => {
       title: "Merge PDF",
       desc: "Combine PDFs in the order you want with the easiest PDF merger available.",
       category: "Organize PDF",
-      color: "#E5322D",
+      color: "#2C7A7B",
     },
     {
       to: "/split",
@@ -30,7 +30,7 @@ export const Home = () => {
       title: "Split PDF",
       desc: "Separate one page or a whole set for easy conversion into independent PDF files.",
       category: "Organize PDF",
-      color: "#E5322D", // Orange/Red
+      color: "#2C7A7B",
     },
     {
       to: "/compress",
@@ -80,8 +80,8 @@ export const Home = () => {
   return (
     <div className="min-h-screen bg-[#F4F7FB]">
       {/* Hero Section */}
-      <div className="bg-[#F4F7FB] pt-20 pb-16 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#383E45] mb-6">
+      <div className="bg-[#F4F7FB] pt-12 pb-12 md:pt-20 md:pb-16 px-4 text-center">
+        <h1 className="text-3xl md:text-5xl font-bold text-[#383E45] mb-4 md:mb-6">
           Every tool you need to work with PDFs in one place
         </h1>
         <p className="text-xl text-[#47505E] max-w-3xl mx-auto leading-relaxed mb-8">

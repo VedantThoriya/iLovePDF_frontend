@@ -14,7 +14,7 @@ export const Sidebar = ({ children, title }: SidebarProps) => {
         </h2>
       </div>
       <div className="flex-1 px-4 py-5 lg:overflow-hidden h-full flex flex-col">
-        {children}
+        {children}  
       </div>
     </div>
   );

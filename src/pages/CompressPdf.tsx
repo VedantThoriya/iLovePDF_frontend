@@ -50,14 +50,10 @@ export const CompressPdf = () => {
 
   return (
     <WorkspaceLayout
-      title="Compress PDF file"
+      title={canCompress ? "Compression level" : "Compress PDF file"}
       description="Reduce file size while optimizing for maximal PDF quality."
       sidebarContent={
         <div className="w-full">
-          <h3 className="text-xl font-bold text-[#383E45] mb-4 text-center pb-4 border-b border-gray-200">
-            Compression level
-          </h3>
-
           <div className="space-y-2">
             {options.map((option) => (
               <div
@@ -73,7 +69,7 @@ export const CompressPdf = () => {
               >
                 <div className="flex justify-between items-center">
                   <div className="flex-1">
-                    <h4 className="text-[#E5322D] font-medium text-sm mb-1 uppercase tracking-wide">
+                    <h4 className="text-[#236363] font-medium text-sm mb-1 uppercase tracking-wide">
                       {option.title}
                     </h4>
                     <p className="text-[#383E45] text-sm">{option.desc}</p>
@@ -93,15 +89,15 @@ export const CompressPdf = () => {
         </div>
       }
       actionButton={
-        <div className="relative group w-full">
+        <div className="relative group w-[280px] ml-auto lg:w-full lg:ml-0">
           <button
             onClick={handleCompress}
             disabled={!canCompress}
             className={`w-full text-white text-xl font-bold py-4 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3
                             ${
                               canCompress
-                                ? "bg-[#e5322D] hover:bg-[#d6201b] hover:scale-105 cursor-pointer"
-                                : "bg-[#ff9c99] cursor-default shadow-none pointer-events-none"
+                                ? "bg-[#2C7A7B] hover:bg-[#236363] hover:scale-105 cursor-pointer"
+                                : "bg-[#98D1D2] cursor-default shadow-none pointer-events-none"
                             }
                         `}
           >

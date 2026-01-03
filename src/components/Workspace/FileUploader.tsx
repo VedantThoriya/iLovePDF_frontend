@@ -26,16 +26,16 @@ export const FileUploader = () => {
     <div
       {...getRootProps()}
       className={`bg-white p-12 rounded-xl shadow-lg border-2 border-dashed border-gray-300 w-full max-w-2xl mx-auto flex flex-col items-center justify-center hover:bg-gray-50 transition-colors cursor-pointer ${
-        isDragActive ? "bg-gray-50 border-red-400" : ""
+        isDragActive ? "bg-gray-50 border-brand-light" : ""
       }`}
     >
       <input {...getInputProps()} />
 
-      <div className="text-red-500 mb-4">
+      <div className="text-brand-light mb-4">
         <Upload size={64} strokeWidth={1.5} />
       </div>
 
-      <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-12 rounded-lg text-xl transition-all shadow-md hover:scale-105 pointer-events-none transform">
+      <button className="bg-[#2C7A7B] hover:bg-[#236363] text-white font-bold py-4 px-12 rounded-lg text-xl transition-all shadow-md hover:scale-105 pointer-events-none transform">
         Select PDF files
       </button>
 

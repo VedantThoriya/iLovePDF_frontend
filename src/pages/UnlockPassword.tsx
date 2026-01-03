@@ -90,8 +90,8 @@ export const UnlockPassword = () => {
                   onClick={() => toggleShowPassword(file.id)}
                   className={`inline-flex items-center px-4 text-white rounded-r-md cursor-pointer transition-colors h-[48px] ${
                     showPasswords[file.id]
-                      ? "bg-[#d6201b]"
-                      : "bg-[#E5322D] hover:bg-[#d6201b]"
+                      ? "bg-[#236363]"
+                      : "bg-[#2C7A7B] hover:bg-[#236363]"
                   }`}
                 >
                   {showPasswords[file.id] ? (
@@ -108,7 +108,7 @@ export const UnlockPassword = () => {
             <button
               onClick={handleSend}
               disabled={isProcessing}
-              className="bg-[#E5322D] hover:bg-[#d6201b] text-white font-bold py-2 px-6 rounded-md transition-all shadow-sm hover:shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
+              className="bg-[#2C7A7B] hover:bg-[#236363] text-white font-bold py-2 px-6 rounded-md transition-all shadow-sm hover:shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isProcessing ? "Sending..." : "Send"}
             </button>

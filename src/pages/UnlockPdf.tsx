@@ -28,7 +28,7 @@ export const UnlockPdf = () => {
         <button
           onClick={handleUnlock}
           disabled={files.length === 0}
-          className="w-full bg-[#E5322D] text-white py-4 rounded-xl text-xl font-bold hover:bg-[#d6201b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full bg-[#2C7A7B] text-white py-4 rounded-xl text-xl font-bold hover:bg-[#236363] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           Unlock PDF
           <ArrowRight size={24} />

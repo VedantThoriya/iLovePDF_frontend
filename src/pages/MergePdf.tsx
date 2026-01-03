@@ -38,15 +38,15 @@ export const MergePdf = () => {
         </div>
       }
       actionButton={
-        <div className="relative group w-full">
+        <div className="relative group w-[280px] ml-auto lg:w-full lg:ml-0">
           <button
             onClick={handleMerge}
             disabled={!canMerge}
             className={`w-full text-white text-xl font-bold py-4 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3
                     ${
                       canMerge
-                        ? "bg-[#e5322d] hover:bg-[#d6201b] hover:scale-105 cursor-pointer"
-                        : "bg-[#ff9c99] cursor-default shadow-none pointer-events-none" // pointer-events-none might block hover on button, so wrapper handles hover
+                        ? "bg-[#2C7A7B] hover:bg-[#236363] hover:scale-105 cursor-pointer"
+                        : "bg-[#98D1D2] cursor-default shadow-none pointer-events-none"
                     }
                 `}
           >

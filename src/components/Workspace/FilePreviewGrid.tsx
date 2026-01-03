@@ -2,10 +2,11 @@ import {
   DndContext,
   closestCenter,
   KeyboardSensor,
-  PointerSensor,
+  MouseSensor,
   useSensor,
   useSensors,
   DragOverlay,
+  TouchSensor,
 } from "@dnd-kit/core";
 import {
   SortableContext,
@@ -124,14 +125,8 @@ const SortableFileCard = ({
   );
 };
 
-export const FilePreviewGrid = ({
-  enableDnD,
-  showAddMore = true,
-}: {
-  enableDnD?: boolean;
-  showAddMore?: boolean;
-}) => {
-  const { files, removeFile, addFiles, reorderFiles } = useJobStore();
+export const FilePreviewGrid = ({ enableDnD }: { enableDnD?: boolean }) => {
+  const { files, removeFile, reorderFiles } = useJobStore();
   const [activeId, setActiveId] = useState<string | null>(null);
   const location = useLocation();
   const isUnlockTool = location.pathname === "/unlock";
@@ -139,12 +134,18 @@ export const FilePreviewGrid = ({
   const isFocusMode = files.length === 1;
 
   const sensors = useSensors(
-    useSensor(PointerSensor, {
+    useSensor(MouseSensor, {
       activationConstraint: {
         distance: 8, // Require 8px movement before drag starts (prevents accidental clicks)
       },
     }),
-    useSensor(KeyboardSensor)
+    useSensor(KeyboardSensor),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 250,
+        tolerance: 5,
+      },
+    })
   );
 
   const handleDragStart = (event: any) => {
@@ -169,7 +170,7 @@ export const FilePreviewGrid = ({
       // just to satisfy "always draggable".
       // But reordering effectively does nothing.
       return (
-        <div className="w-full h-full flex items-center justify-center -mt-12">
+        <div className="w-full h-full flex items-center justify-center mt-8 lg:-mt-12">
           {enableDnD ? (
             <SortableContext
               items={files.map((f) => f.id)}
@@ -247,7 +248,7 @@ export const FilePreviewGrid = ({
       ));
 
       return (
-        <div className="flex flex-wrap justify-center gap-6 pb-12">
+        <div className="flex flex-col lg:flex-row lg:flex-wrap items-center justify-center gap-6 pb-12">
           {enableDnD ? (
             <SortableContext
               items={files.map((f) => f.id)}
@@ -305,29 +306,8 @@ export const FilePreviewGrid = ({
   };
 
   return (
-    <div className="relative w-full h-full min-h-0 pt-12">
-      {/* Add Button */}
-      {showAddMore && (
-        <div className="absolute top-0 -right-10 z-20">
-          <label className="flex items-center justify-center w-[42px] h-[42px] bg-[#e5322d] hover:bg-[#d6201b] text-white rounded-full shadow-lg cursor-pointer transition-transform hover:scale-105 relative">
-            <input
-              type="file"
-              multiple
-              accept=".pdf"
-              className="hidden"
-              onChange={(e) => {
-                if (e.target.files && e.target.files.length > 0)
-                  addFiles(Array.from(e.target.files));
-                e.target.value = "";
-              }}
-            />
-            <span className="text-4xl font-light pb-2 leading-none">+</span>
-            <div className="absolute -top-1 -right-1 bg-black text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-[#f3f3f5]">
-              {files.length}
-            </div>
-          </label>
-        </div>
-      )}
+    <div className="relative w-full h-full min-h-0 pt-4 lg:pt-12">
+      {/* Add Button (Desktop Only - Moved to WorkspaceLayout) */}
 
       <DndContext
         sensors={sensors}

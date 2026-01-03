@@ -151,7 +151,7 @@ export const UploadingPage = () => {
       <div className="flex flex-col items-center w-full max-w-4xl px-4">
         {/* Logo */}
         <Link to="/" className="mb-12">
-          <img src="/ilovepdf.svg" alt="iLovePDF" className="h-8 md:h-10" />
+          <img src="/logo.svg" alt="PaperFlow" className="h-8 md:h-10" />
         </Link>
 
         {/* Text Content */}
@@ -176,7 +176,7 @@ export const UploadingPage = () => {
         {/* Progress Bar */}
         <div className="w-full max-w-2xl h-4 bg-white rounded-full overflow-hidden mb-6 shadow-sm">
           <div
-            className="h-full bg-[#E5322D] transition-all duration-200 ease-linear"
+            className="h-full bg-[#2C7A7B] transition-all duration-200 ease-linear"
             style={{ width: `${progress}%` }}
           ></div>
         </div>

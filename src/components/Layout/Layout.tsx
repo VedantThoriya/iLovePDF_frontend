@@ -30,7 +30,7 @@ export const Layout = ({ children }: LayoutProps) => {
       </main>
       {isHome && (
         <footer className="bg-gray-100 py-6 text-center text-gray-500 text-sm border-t border-gray-200">
-          &copy; {new Date().getFullYear()} PDF Util. All rights reserved.
+          &copy; {new Date().getFullYear()} PaperFlow. All rights reserved.
         </footer>
       )}
     </div>

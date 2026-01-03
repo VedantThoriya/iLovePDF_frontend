@@ -69,8 +69,8 @@ export const ProtectPdf = () => {
                 onClick={() => setShowPassword(!showPassword)}
                 className={`inline-flex items-center px-4 text-white rounded-r-md cursor-pointer transition-colors h-[48px] ${
                   showPassword
-                    ? "bg-[#d6201b]"
-                    : "bg-[#E5322D] hover:bg-[#d6201b]"
+                    ? "bg-[#236363]"
+                    : "bg-[#2C7A7B] hover:bg-[#236363]"
                 }`}
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
@@ -101,8 +101,8 @@ export const ProtectPdf = () => {
                 onClick={() => setShowRepeatPassword(!showRepeatPassword)}
                 className={`inline-flex items-center px-4 text-white rounded-r-md cursor-pointer transition-colors h-[48px] ${
                   showRepeatPassword
-                    ? "bg-[#d6201b]"
-                    : "bg-[#E5322D] hover:bg-[#d6201b]"
+                    ? "bg-[#236363]"
+                    : "bg-[#2C7A7B] hover:bg-[#236363]"
                 }`}
               >
                 {showRepeatPassword ? <EyeOff size={20} /> : <Eye size={20} />}
@@ -119,8 +119,8 @@ export const ProtectPdf = () => {
             className={`w-full text-white text-xl font-bold py-4 px-6 rounded-xl shadow-md transition-all flex items-center justify-center gap-3
                             ${
                               canProtect
-                                ? "bg-[#e5322D] hover:bg-[#d6201b] hover:scale-105 cursor-pointer"
-                                : "bg-[#f49c9a] cursor-default shadow-none pointer-events-none opacity-90" // Adjusted disabled color to match screenshot potential
+                                ? "bg-[#2C7A7B] hover:bg-[#236363] hover:scale-105 cursor-pointer"
+                                : "bg-[#98D1D2] cursor-default shadow-none pointer-events-none opacity-90" // Adjusted disabled color to match screenshot potential
                             }
                         `}
           >

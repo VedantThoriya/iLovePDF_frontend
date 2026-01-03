@@ -68,14 +68,22 @@ export const SplitPdf = () => {
         />
       }
       actionButton={
-        <button
-          onClick={handleSplit}
-          disabled={files.length === 0}
-          className="w-full bg-[#E5322D] hover:bg-[#d6201b] text-white text-xl font-bold py-4 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3 hover:scale-105 disabled:opacity-50 disabled:pointer-events-none"
-        >
-          <span>Split PDF</span>
-          <ArrowRight size={24} />
-        </button>
+        <div className="relative group w-[280px] ml-auto lg:w-full lg:ml-0">
+          <button
+            onClick={handleSplit}
+            disabled={files.length === 0}
+            className={`w-full text-white text-xl font-bold py-4 px-6 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3
+              ${
+                files.length > 0
+                  ? "bg-[#2C7A7B] hover:bg-[#236363] hover:scale-105 cursor-pointer"
+                  : "bg-[#98D1D2] cursor-default shadow-none pointer-events-none"
+              }
+            `}
+          >
+            <span>Split PDF</span>
+            <ArrowRight size={24} />
+          </button>
+        </div>
       }
     />
   );
